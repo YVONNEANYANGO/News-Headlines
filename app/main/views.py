@@ -14,7 +14,7 @@ def index():
     View root page function that returns the index page and its data
     '''
 
-    # Getting popular movie
+    # Getting popular news
     most_recent_news = get_news('most_recent')
     recent_news = get_news('recent')
     past_news = get_news('past')
