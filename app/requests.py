@@ -85,7 +85,7 @@ def get_news(id):
         news_object = None
         if news_details_response:
             id = news_details_response.get('id')
-            name = news_details_response.get('original_title')
+            name = news_details_response.get('original_name')
             description = news_details_response.get('description')
             poster = news_details_response.get('poster_path')
             category = news_details_response.get('category')
@@ -96,20 +96,20 @@ def get_news(id):
 
     return news_object
 
-def search_movie(movie_name):
-    search_movie_url = 'https://api.themoviedb.org/3/search/movie?api_key={}&query={}'.format(api_key,movie_name)
-    with urllib.request.urlopen(search_movie_url) as url:
-        search_movie_data = url.read()
-        search_movie_response = json.loads(search_movie_data)
+# def search_news(news_name):
+#     search_news_url = 'https://api.themoviedb.org/3/search/movie?api_key={}&query={}'.format(api_key,news_name)
+#     with urllib.request.urlopen(search_news_url) as url:
+#         search_movie_data = url.read()
+#         search_movie_response = json.loads(search_movie_data)
 
-        search_movie_results = None
+#         search_movie_results = None
 
-        if search_movie_response['results']:
-            search_movie_list = search_movie_response['results']
-            search_movie_results = process_results(search_movie_list)
+#         if search_movie_response['results']:
+#             search_movie_list = search_movie_response['results']
+#             search_movie_results = process_results(search_movie_list)
 
 
-    return search_movie_results
+#     return search_news_results
     
     
     
