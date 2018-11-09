@@ -32,29 +32,23 @@
             </form>
             
         </div>
-          <!-- Popular movie section  -->
+          <!-- Most Recent News -->
         <h3>Most Recent News</h3>
         <ul>
-           <!-- {% for popular_movie in popular %}
-               <li>{{ popular_movie.title}}</li>
-           {% endfor %} -->
+
            {{ macro.displayNewsList(most_recent)}}
        </ul>
 
-            <!-- Upcoming movie  -->
+            <!-- Recent News  -->
             <h3>Recent News </h3>
             <ul>
-            <!-- {% for upcoming_movie in upcoming %}
-                <li>{{ upcoming_movie.title}}</li>
-            {% endfor %} -->
+
             {{ macro.displayNewsList(recent)}}
         </ul>
-        <!-- Now showing movie -->
+        <!-- Past News -->
         <h3>Past News</h3>
             <ul>
-            <!-- {% for now_showing_movie in now_showing %}
-                <li>{{ now_showing_movie.title}}</li>
-            {% endfor %} -->
+
             {{ macro.displayNewsList(past)}}
         </ul>
     
