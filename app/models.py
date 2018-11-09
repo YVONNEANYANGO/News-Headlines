@@ -3,7 +3,7 @@ class News:
     Movie class to define Movie Objects
     '''
 
-    def __init__(self,id,name,description,url,category,language,country):
+    def __init__(self,id,name,description,poster,category,language,country):
         
         
         # self.id =id
@@ -15,7 +15,7 @@ class News:
         self.id: fox-news,
         self.name: Fox News,
         self.description: Breaking News, Latest News and Current News from FOXNews.com. Breaking news and video. Latest Current News: U.S., World, Entertainment, Health, Business, Technology, Politics, Sports.,
-        self.url: "http://www.foxnews.com",
+        self.poster: "http://www.foxnews.com",
         self.category: general,
         self.language: en,
         self.country: us
