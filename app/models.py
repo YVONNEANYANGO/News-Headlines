@@ -12,13 +12,13 @@ class News:
         # self.poster = "https://image.tmdb.org/t/p/w500/" + poster
         # self.vote_average = vote_average
         # self.vote_count = vote_count
-        self.id: fox-news,
-        self.name: Fox News,
-        self.description: Breaking News, Latest News and Current News from FOXNews.com. Breaking news and video. Latest Current News: U.S., World, Entertainment, Health, Business, Technology, Politics, Sports.,
-        self.poster: "http://www.foxnews.com",
-        self.category: general,
-        self.language: en,
-        self.country: us
+        self.id = fox-news,
+        self.name = Fox News,
+        self.description = Breaking News, Latest News and Current News from FOXNews.com. Breaking news and video. Latest Current News: U.S., World, Entertainment, Health, Business, Technology, Politics, Sports.,
+        self.poster = "http://www.foxnews.com",
+        self.category = general,
+        self.language = en,
+        self.country = us
 
 
 
