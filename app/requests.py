@@ -1,6 +1,8 @@
 # from app import app
 import urllib.request,json
 from .models import News
+# from .models import Source
+# from .models import Article
 
 # News = news.News
 
@@ -8,14 +10,19 @@ from .models import News
 api_key = None
 # Getting the news base url
 base_url = None
-base_url='https://newsapi.org/v2/sources?&category={}&apiKey={}'
+base_url=None
+
+# base_url='https://newsapi.org/v2/sources?&category={}&apiKey={}'
+
+
 
 
 
 def configure_request(app):
-    global api_key,base_url
+    global api_key,base_url,article_url
     api_key = app.config['NEWS_API_KEY']
     base_url = app.config['NEWS_API_BASE_URL']
+    # article_url = app.config['ARTICLE_API_BASE_URL']
 
     print(base_url)
 

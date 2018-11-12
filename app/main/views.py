@@ -1,10 +1,6 @@
 from flask import render_template,request,redirect,url_for
 from . import main
-from ..request import get_movies,get_movie,search_movie
-from ..models import Review
-from .forms import ReviewForm
-# Review = reviews.Review
-
+from ..requests import get_news,get_news
 
 # Views
 @main.route('/')

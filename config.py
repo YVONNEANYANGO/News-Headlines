@@ -1,6 +1,11 @@
 import os
 
 class Config:
+
+    base_url='https://newsapi.org/v2/sources?&category={}&apiKey={}'
+    NEWS_API_BASE_URL= 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'
+
+
     """
     General configuration parent class
     """
@@ -18,7 +23,10 @@ class ProdConfig(Config):
     """
 
 
+
 class DevConfig(Config):
+
+    
     """
     Development configuration child class
 
