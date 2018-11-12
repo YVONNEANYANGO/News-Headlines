@@ -5,7 +5,7 @@
             <img src="{{ news.poster }}" alt="{{ news.title }} poster" class="img-responsive">
             <li class="text-center">
                 <a href="/news/{{news.id}}">
-                    {{ news.title|truncate(20)}}</a>
+                    {{ news.headline|truncate(20)}}</a>
             </li>
         </div>
 
@@ -13,12 +13,13 @@
 
 {% endmacro %}
 
-<!-- Displaying reviews macro -->
-{% macro displayReviews(review_list) %}
-    {% for review in review_list %}
-    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 review-card">
-        <h2> {{ review.title}} </h2>
-        <p> {{ review.review | truncate(30) }}</p>
+<!-- Displaying articles macro -->
+{% macro displayArticles(article_list) %}
+    {% for article in article_list %}
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 article-card">
+        <h2> {{ article.headline}} </h2>
+        <p> {{ article.article | truncate(30) }}</p>
     </div>
     {% endfor %}
 {% endmacro %}
+

@@ -8,6 +8,9 @@ from .models import News
 api_key = None
 # Getting the news base url
 base_url = None
+base_url='https://newsapi.org/v2/sources?&category={}&apiKey={}'
+
+
 
 def configure_request(app):
     global api_key,base_url

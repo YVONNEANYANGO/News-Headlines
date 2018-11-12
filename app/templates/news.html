@@ -13,28 +13,28 @@
             </div>
     
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 movie-details">
-                <h3>{{ news.title }}</h3>
+                <h3>{{ news.headline }}</h3>
     
                 <p class="overview"> {{ news.overview }}</p>
                 <p class="ratings"> <b> {{ news.vote_average }}</b> - <i>{{ news.vote_count}} votes </i> </p>
-    
-                <a class="ratings" href="/news/review/new/{{news.id}}"> Write a new review </a>
+                h http://127.0.0.1:5000/ ttp://127.0.0.1:5000/ 
+                <a class="ratings" href="/news/review/new/{{news.id}}"> Write a new article </a>
     
     
             </div>
         </div>
     <div class="row">
 
-        <h1>Reviews</h1>
+        <h1>Articles</h1>
             <hr>
                 
-            {% if reviews %}
-                {{macro.displayReviews(reviews)}}
+            {% if articles %}
+                {{macro.displayArticles(articles)}}
                 
             {% else%}
-                <h3 class="text-center">This news has no reviews </h3>
+                <h3 class="text-center">This news has no new articles </h3>
                 
-                <a class="btn btn-success btn-lg text-center" href="/movie/review/new/{{movie.id}}"> Write a new review</a>
+                <a class="btn btn-success btn-lg text-center" href="/news/article/new/{{news.id}}"> Write a new article</a>
             {% endif %}
                 
     </div>
