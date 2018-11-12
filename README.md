@@ -9,15 +9,9 @@ News-Headlines is python application that allow users to get world-wide news and
 ## User Stories
 
 Benefits for the users...Users are able to:-
- * Create password locker account with their details eg Log-in and password
- * Store their existing login credentials 
- * Generate password for a new credential
-
- As a user, I would like to see various news sources on the homepage of the application.
-As a user, I would also want to select a news source and see all news articles from the selected news source in the application.
-As a user, I would want to see the image, description and the time a news article was created.
-As a user, I would want to click on an article and read the full article on the source website.
-
+ * Log in and see various news sources on the homepage of the application
+ * Select a news source and see all news articles from the selected news source in the application
+ * Click on an article and read the full article on the source website
 
  ## Behaviour Driven Development(BDD)
  
@@ -59,7 +53,7 @@ Python3.6
 ## How to Access the Application
 
 Run this command in your terminal
-$ git clone https://github.com/YVONNEANYANGO/Python-Password-Locker.git
+$ git clone https://github.com/YVONNEANYANGO/Python-News-Headlines.git
 $ cd python-Password-Locker
 
 ## Running the Application
