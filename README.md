@@ -15,30 +15,11 @@ Benefits for the users...Users are able to:-
 
  ## Behaviour Driven Development(BDD)
  
-* To interract with the application Run ./run.py in the terminal to get a Welcome to Password_Locker
+* To interract with the application run this url in your search engine "http://127.0.0.1:5000/"
 
-  **Input** Enter cc
+  **Input** Click on the news headline of your choice
   
-  **Expected Result** Create a new account alert that will guide you in creating your credentials eg account_name,user_name
-
-* For application to Display Credentials
-
-  **Input** Enter dc
-  
-  **Expected Result** Displays a list of saved Credentials
-
-* For application to find credentials by username
-
-  **Input** Enter fc
-  
-  **Expected Result** Display credentials that matches the user name
-
-* For user to exit the application
-
-  **Input** Enter ex 
-  
-  **Expected Result** Exit credential list
-
+  **Expected Result** View of the news articles of the particular news that the user selected..finally the user is free to read from that article.
 
 ## SetUp/Installation Requirements
 
@@ -48,25 +29,16 @@ Benefits for the users...Users are able to:-
 
 ## Terminologies Used
 
-Python3.6
-
-## How to Access the Application
-
-Run this command in your terminal
-$ git clone https://github.com/YVONNEANYANGO/Python-News-Headlines.git
-$ cd python-Password-Locker
+ * Python3.6
+ * Bootstrap
+ * CSS
+ * Flask
 
 ## Running the Application
 
 Run this command in your application
 
 $ ./run.py
-
-## Testing the Application
-
-Run this command to confirm if the application is running as expected
-
-$ python3.6 credential_test.py
 
 ## Contacts
 
