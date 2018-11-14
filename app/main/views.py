@@ -1,7 +1,7 @@
 from flask import render_template,request,redirect,url_for
 from . import main
 from ..requests import get_news,get_news
-
+from ..models import News,Article
 # Views
 @main.route('/')
 def index():
@@ -11,9 +11,9 @@ def index():
     '''
 
     # Getting popular news
-    most_recent_news = get_news('most_recent')
-    recent_news = get_news('recent')
-    past_news = get_news('past')
+    most_recent_news = get_news('business')
+    recent_news = get_news('technology')
+    past_news = get_news('sports')
 
     title = 'Home-Page - Welcome to News Update Review Website Online'
 

@@ -53,3 +53,13 @@ class Article:
                 response.append(article)
 
         return response
+
+class Articles:
+    
+    def __init__(self,author,title,description,url,urlToImage,publishedAt):
+        self.author = author
+        self.title =title
+        self.description = description
+        self.url = url
+        self.urlToImage =urlToImage
+        self.publishedAt = publishedAt        

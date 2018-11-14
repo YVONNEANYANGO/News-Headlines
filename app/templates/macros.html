@@ -2,10 +2,12 @@
 
     {% for news in news_list %}
         <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 news-card">
-            <img src="{{ news.poster }}" alt="{{ news.title }} poster" class="img-responsive">
+            <img src="{{ news.urlToImage }}" alt="{{ news.title }} poster" class="img-responsive">
             <li class="text-center">
-                <a href="/news/{{news.id}}">
-                    {{ news.headline|truncate(20)}}</a>
+                <a href="{{news.url}}">
+                    {{ news.title}}</a>
+                    <p>{{news.description}}</p>
+                    <p>{{news.author}}</p>
             </li>
         </div>
 

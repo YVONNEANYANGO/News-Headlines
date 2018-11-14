@@ -1,6 +1,7 @@
 # from app import app
 import urllib.request,json
-from .models import News
+from .models import *
+from . import main
 # from .models import Source
 # from .models import Article
 
@@ -10,21 +11,22 @@ from .models import News
 api_key = None
 # Getting the news base url
 base_url = None
-base_url=None
-
-# base_url='https://newsapi.org/v2/sources?&category={}&apiKey={}'
-
+# base_url=None
+NEWS_API_BASE_URL = None
+# base_url=
 
 
 
 
 def configure_request(app):
     global api_key,base_url,article_url
-    api_key = app.config['NEWS_API_KEY']
+    api_key = app.config['API_KEY']
+    # print(api_key)
+    
     base_url = app.config['NEWS_API_BASE_URL']
     # article_url = app.config['ARTICLE_API_BASE_URL']
-
-    print(base_url)
+    
+    # print(base_url.format("bbc-news",api_key))
 
 
 # Getting the movie base url
@@ -37,16 +39,16 @@ def get_news(category):
     '''
     get_news_url = base_url.format(category,api_key)
     print(get_news_url)
+    news_results = None
 
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
         get_news_response = json.loads(get_news_data)
 
-        news_results = None
 
-        if get_news_response['results']:
-            news_results_list = get_news_response['results']
-            news_results = process_results(news_results_list)
+        if get_news_response['articles']:
+            news_results_list = get_news_response['articles']
+            news_results = process_articles(news_results_list)
 
     return news_results
 
@@ -65,9 +67,9 @@ def process_results(news_list):
     for news_item in news_list:
 
         id = news_item.get('id')
-        name = news_item.get('original_name')
+        author = news_item.get('author')
         description = news_item.get('description')
-        poster = news_item.get('poster_path')
+        urlToImage = news_item.get('urlToImage')
         category = news_item.get('category')
         language = news_item.get('language')
         country = news_item.get('country')
@@ -79,32 +81,45 @@ def process_results(news_list):
         # vote_average = movie_item.get('vote_average')
         # vote_count = movie_item.get('vote_count')
 
-        if poster:
+        if urlToImage:
             news_object = News(id,name,description,poster,category,language,country)
             news_results.append(news_object)
 
     return news_results
+def process_articles(source):
+    source_articles = []
+    for item_article in source:
+        author = item_article.get('author')
+        title = item_article.get('title')
+        description = item_article.get('description')
+        url = item_article.get('url')
+        urlToImage = item_article.get('urlToImage')
+        publishedAt = item_article.get('publishedAt')
+        if urlToImage:
+            articles_object = Articles(author,title,description,url,urlToImage,publishedAt)
+            source_articles.append(articles_object)
+    return source_articles
+# def get_news(id):
+#     get_news_url = base_url.format(id,api_key)
+#     print(get_news_url)
 
-def get_news(id):
-    get_news_details_url = base_url.format(id,api_key)
+#     with urllib.request.urlopen(get_news_url) as url:
+#         news_data = url.read()
+#         news_response = json.loads(news_data)
 
-    with urllib.request.urlopen(get_news_details_url) as url:
-        news_details_data = url.read()
-        news_details_response = json.loads(news_details_data)
+#         news_object = None
+#         if news_response:
+#             id = news_response.get('id')
+#             name = news_response.get('original_name')
+#             description = news_response.get('description')
+#             poster = news_response.get('poster_path')
+#             category = news_response.get('category')
+#             language = news_response.get('language')
+#             country = news_response.get('country')
 
-        news_object = None
-        if news_details_response:
-            id = news_details_response.get('id')
-            name = news_details_response.get('original_name')
-            description = news_details_response.get('description')
-            poster = news_details_response.get('poster_path')
-            category = news_details_response.get('category')
-            language = news_details_response.get('language')
-            country = news_details_response.get('country')
+#             news_object = News(id,name,description,poster,category,language,country)
 
-            news_object = News(id,name,description,poster,category,language,country)
-
-    return news_object
+#     return news_object
 
 # def search_news(news_name):
 #     search_news_url = 'https://api.themoviedb.org/3/search/movie?api_key={}&query={}'.format(api_key,news_name)
