@@ -36,9 +36,11 @@ Benefits for the users...Users are able to:-
 
 ## Running the Application
 
+clone this link on your terminal 
+
 Run this command in your application
 
-$ ./run.py
+$ ./start.sh
 
 ## Contacts
 
