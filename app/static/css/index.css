@@ -1,0 +1,11 @@
+/* .container{
+ background-size :cover;
+ background-repeat: no-repeat;
+ background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd0ZiIgpbfr9C1JfJ1RNmuacSlbmNgA0Vtr6cCYcZNYBrKCdtg-A");
+} */
+
+li {
+    list-style-type: none;
+    text-justify: auto;
+    
+}
