@@ -38,6 +38,8 @@ Benefits for the users...Users are able to:-
 
 clone this link on your terminal 
 
+https://github.com/YVONNEANYANGO/News-Headlines.git
+
 Run this command in your application
 
 $ ./start.sh
